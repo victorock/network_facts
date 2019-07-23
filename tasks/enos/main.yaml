@@ -1,0 +1,9 @@
+---
+- name: "enos.main: gather facts"
+  enos_facts:
+    gather_subset: "{{ _network_facts_gather_subset }}"
+  register: "r_platform_facts"
+
+- name: "enos.main: set facts under ansible_facts"
+  set_fact:
+    ansible_facts: "r_platform_facts"

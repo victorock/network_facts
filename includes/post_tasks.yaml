@@ -1,0 +1,6 @@
+---
+- name: "post_tasks"
+  include_tasks: "{{ item }}"
+  with_first_found:
+    - skip: true
+      files: "{{ network_facts_post_tasks }}"

@@ -1,0 +1,8 @@
+---
+network_facts_pre_tasks: []
+network_facts_pre_roles: []
+network_facts_os: "{{ ansible_network_os | default(None, True) }}"
+network_facts_platform: "{{ ansible_network_platform | default(None, True) }}"
+network_facts_function: "{{ function | default('main') }}"
+network_facts_post_tasks: []
+network_facts_post_roles: []

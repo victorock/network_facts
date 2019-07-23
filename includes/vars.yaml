@@ -1,0 +1,13 @@
+---
+- name: "tasks: load os/platform/version specific variables"
+  include_vars: "{{ item }}"
+  with_first_found:
+    - skip: true
+      files:
+        # yamllint disable-line rule:line-length
+        - "{{ network_facts_os }}/{{ network_facts_platform }}/{{ network_facts_version }}.yaml"
+        - "{{ network_facts_os }}/{{ network_facts_platform }}.yaml"
+        - "{{ network_facts_os }}/main.yaml"
+        - "main.yaml"
+      paths:
+        - "../vars/"

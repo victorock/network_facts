@@ -1,0 +1,12 @@
+---
+- name: "tasks: call os/platform/version specific tasks"
+  include_tasks: "{{ item }}"
+  with_first_found:
+    - skip: true
+      files:
+        # yamllint disable-line rule:line-length
+        - "{{ network_facts_os }}/{{ network_facts_platform }}/{{ network_facts_version }}/{{ network_facts_function }}.yaml"
+        # yamllint disable-line rule:line-length
+        - "{{ network_facts_os }}/{{ network_facts_platform }}/{{ network_facts_function }}.yaml"
+        - "{{ network_facts_os }}/{{ network_facts_function }}.yaml"
+        - "{{ network_facts_os }}/main.yaml"

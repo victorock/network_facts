@@ -1,0 +1,9 @@
+---
+- name: "netconf.main: gather facts"
+  netconf_get:
+    display: "json"
+  register: "r_platform_facts"
+
+- name: "netconf.main: set facts under ansible_facts"
+  set_fact:
+    ansible_facts: "r_platform_facts"

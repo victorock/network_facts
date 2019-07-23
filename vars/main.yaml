@@ -1,0 +1,3 @@
+---
+_network_facts_gather_subset:
+  - "all"

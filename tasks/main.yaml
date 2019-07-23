@@ -1,0 +1,21 @@
+---
+- name: "network_facts: main"
+  block:
+    - name: "network_facts: init vars"
+      include_tasks: "{{ role_path }}/includes/vars.yaml"
+
+    - name: "network_facts: init pre_tasks"
+      include_tasks: "{{ role_path }}/includes/pre_tasks.yaml"
+
+    - name: "network_facts: init pre_roles"
+      include_tasks: "{{ role_path }}/includes/pre_roles.yaml"
+
+    - name: "network_facts: init tasks"
+      include_tasks: "{{ role_path }}/includes/tasks.yaml"
+
+  always:
+    - name: "network_facts: init post tasks"
+      include_tasks: "{{ role_path }}/includes/post_tasks.yaml"
+
+    - name: "network_facts: init post roles"
+      include_tasks: "{{ role_path }}/includes/post_roles.yaml"

@@ -1,0 +1,12 @@
+---
+_network_facts_gather_subset:
+  - "device"
+  - "device_group"
+  - "interface"
+  - "node"
+  - "pool"
+  - "self_ip"
+  - "software"
+  - "system_info"
+  - "virtual_address"
+  - "virtual_server"
